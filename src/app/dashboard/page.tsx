@@ -8,9 +8,11 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Separator } from "@radix-ui/react-separator";
 
 import { BookText, FolderClosed, Folders, Share2, Building, ChartColumnIncreasing, 
-         Settings, ChevronLeft, Search, SlidersVertical, CircleEllipsis, FolderPlus, ChevronDown } from "lucide-react";
+         Settings, ChevronLeft, Search, SlidersVertical, CircleEllipsis, FolderPlus, 
+         ChevronDown, FileSearch2, Map } from "lucide-react";
 
 const Dashboard = () => {
   const router =  useRouter();
@@ -132,16 +134,26 @@ const Dashboard = () => {
               </div>
 
               <div className="flex-1 flex justify-center items-center relative">
-                <Search className="absolute left-[25%] ml-3 z-[1] text-gray-500" />
+                <Search className="absolute left-[21.5%] ml-3 z-[1] text-gray-500" />
 
                 <Input 
                   placeholder="Type a file name, tag or keyword"
                   className="border-none w-[50%] pl-12 py-2 bg-gray-100"
                 />
 
-                <Button variant="ghost" className="hover:bg-transparent z-[1] absolute right-[24%] mr-3">
+                <Button variant="ghost" className="hover:bg-transparent z-[1] absolute right-[28%] mr-3">
                   <SlidersVertical className="text-green-400" />
                 </Button>
+
+                <div className="flex flex-row items-center border rounded-lg shadow-sm ml-12">
+                  <span className="border-r p-1">
+                    <FileSearch2 />
+                  </span>
+                  
+                  <span className="p-1 text-gray-400">
+                    <Map />
+                  </span>
+                </div>
               </div>
 
               <div className="relative">
@@ -151,7 +163,7 @@ const Dashboard = () => {
                 </Avatar>
 
                 {notiNum > 0 && (
-                  <span className="absolute top-5 right-3 bg-red-500 text-white border-2 border-white  text-xs rounded-xl px-3 py-1 z-10">
+                  <span className="absolute top-5 right-3 bg-red-500 text-white border-2 border-white text-xs rounded-xl px-3 py-1 z-10">
                     {notiNum}
                   </span>
                 )}
