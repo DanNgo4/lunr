@@ -8,7 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 import { BookText, FolderClosed, Folders, Share2, Building, ChartColumnIncreasing, 
-         Settings, ChevronLeft, Search } from "lucide-react";
+         Settings, ChevronLeft, /* Search */ } from "lucide-react";
 
 const Dashboard = () => {
   const router =  useRouter();
