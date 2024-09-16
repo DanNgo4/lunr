@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+//import { useRouter } from "next/router";
 
 import { useState } from "react";
 
@@ -9,7 +10,8 @@ import { ChevronLeft } from "lucide-react";
 
 import MicrosoftLogo from "./images/microsoft.png";
 
-export default function Home({ teamName="luminosity" }) {
+export default function Home() {
+  //const router =  useRouter();
   const [name, setName] = useState("");
   const [pwd, setPwd] = useState("");
 
@@ -26,7 +28,7 @@ export default function Home({ teamName="luminosity" }) {
 
       <form className="bg-white p-10 border rounded-lg shadow-sm min-w-96">
         <p className="text-left">Log in to Team 
-          <span className="text-purple-600"> ({teamName})</span>
+          <span className="text-purple-600"> (luminosity)</span>
         </p>
         <hr />
 
