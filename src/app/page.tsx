@@ -34,7 +34,7 @@ export default function Home() {
 
       <form className="bg-white p-10 border rounded-lg shadow-sm min-w-96">
         <p className="text-left">Log in to Team 
-          <span className="text-purple-600"> (luminosity)</span>
+          <span className="text-purple-600"> {"(luminosity)"}</span>
         </p>
         <hr />
 
