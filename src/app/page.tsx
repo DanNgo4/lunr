@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
-//import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 import { useState } from "react";
 
@@ -11,9 +11,16 @@ import { ChevronLeft } from "lucide-react";
 import MicrosoftLogo from "./images/microsoft.png";
 
 export default function Home() {
-  //const router =  useRouter();
+  const router =  useRouter();
   const [name, setName] = useState("");
   const [pwd, setPwd] = useState("");
+
+  const handleLogin = (e: any) => {
+    e.preventDefault();
+    if (name && pwd) {
+      router.push("/dashboard");
+    }
+  };
 
   return (
     <main className="flex flex-col justify-center items-center p-28">
@@ -85,6 +92,7 @@ export default function Home() {
             type="submit" 
             value="Login"
             disabled={!name || !pwd}
+            onClick={handleLogin}
             className={`rounded-full text-white py-2 px-24 
             ${!name || !pwd ? "bg-purple-300 cursor-not-allowed"
                             : "hover:bg-purple-500 hover:cursor-pointer bg-purple-600"}`}
