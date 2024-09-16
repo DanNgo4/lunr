@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import Head from "next/head";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -16,6 +16,10 @@ import { BookText, FolderClosed, Folders, Share2, Building, ChartColumnIncreasin
 const Dashboard = () => {
   const router =  useRouter();
   const [activeId, setActiveId] = useState("");
+
+  useEffect(() => {
+    handleClick("repo");
+  }, []);
 
   const handleClick = (id: string) => {
     setActiveId(id);
