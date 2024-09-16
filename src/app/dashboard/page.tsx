@@ -30,7 +30,7 @@ const Dashboard = () => {
       </Head>
 
       <main className="grid grid-cols-[10%_90%] min-h-screen text-xs">
-        <article className="flex flex-col h-full bg-gray-100 border-r-2">
+        <article className="flex flex-col h-full bg-gray-100 ">
           <section className="flex flex-col">
             <svg className="w-auto my-4 mx-2" viewBox="0 0 117 42" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fillRule="evenodd" clipRule="evenodd" d="M41.112 20.556c0 11.352-9.204 20.556-20.556 20.556C9.203 41.112 0 31.908 0 20.556 0 9.203 9.203 0 20.556 0c11.352 0 20.556 9.203 20.556 20.556ZM23.176 33.658c1.574 0 1.935 1.68.386 1.958-.9.162-1.828.247-2.776.247-8.574 0-15.525-6.924-15.525-15.464S12.21 4.936 20.786 4.936c3.165 0 6.109.943 8.564 2.563 1.135.75.511 2.31-.85 2.31h-1.014a1.368 1.368 0 1 0 0 2.736h5.853c.51 0 .986.264 1.223.716.466.89-.227 1.89-1.23 1.89H16.473a1.303 1.303 0 1 0 0 2.607h18.431c.683 0 1.273.481 1.337 1.161.074.774-.561 1.418-1.339 1.418h-13.31a1.428 1.428 0 0 0 0 2.857h12.723c.908 0 1.595.832 1.33 1.7-.175.578-.721.944-1.326.944H18.038a1.303 1.303 0 1 0 0 2.607h13.351c1.164 0 1.85 1.263 1.082 2.137-.269.306-.66.47-1.067.47h-11.02a1.303 1.303 0 1 0 0 2.606h2.792Zm.4-23.85a1.368 1.368 0 1 0 0 2.737 1.368 1.368 0 0 0 0-2.737Zm-7.363 12.055a1.368 1.368 0 1 1 2.736 0 1.368 1.368 0 0 1-2.736 0Z" fill="#5349CE"></path>
@@ -121,7 +121,7 @@ const Dashboard = () => {
           </section>
         </article>
 
-        <article className="bg-white border-2 ">
+        <article className="bg-white">
           <section className="grid grid-rows-[8%_92%] h-full">
             <div className="bg-white mx-auto w-full flex justify-between items-center relative px-4">
               <div 
@@ -170,10 +170,10 @@ const Dashboard = () => {
             </div>
 
             <div className="grid grid-cols-[85%_15%] w-full">
-              <div className="border-2 border-black">
+              <div className="border-2">
               </div>
 
-              <div className="grid grid-rows-[20%_80%] h-full">
+              <div className="grid grid-rows-[20%_80%] h-full border-t-2">
                 <div className="flex flex-col items-center">
                   <button className="rounded-full text-white py-2 px-24 bg-purple-500 hover:cursor-pointer flex flex-row items-center gap-1 w-[95%]">
                     <p>Create</p>
