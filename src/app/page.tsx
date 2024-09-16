@@ -15,8 +15,7 @@ export default function Home() {
   const [name, setName] = useState("");
   const [pwd, setPwd] = useState("");
 
-  const handleLogin = (e: any) => {
-    e.preventDefault();
+  const handleLogin = () => {
     if (name && pwd) {
       router.push("/dashboard");
     }
@@ -92,7 +91,10 @@ export default function Home() {
             type="submit" 
             value="Login"
             disabled={!name || !pwd}
-            onClick={handleLogin}
+            onClick={e => {
+              e.preventDefault();
+              handleLogin();
+            }}
             className={`rounded-full text-white py-2 px-24 
             ${!name || !pwd ? "bg-purple-300 cursor-not-allowed"
                             : "hover:bg-purple-500 hover:cursor-pointer bg-purple-600"}`}
