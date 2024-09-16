@@ -8,7 +8,6 @@ import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Separator } from "@radix-ui/react-separator";
 
 import { BookText, FolderClosed, Folders, Share2, Building, ChartColumnIncreasing, 
          Settings, ChevronLeft, Search, SlidersVertical, CircleEllipsis, FolderPlus, 
