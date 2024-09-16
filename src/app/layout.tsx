@@ -24,9 +24,9 @@ type Props = {
 
 export default function RootLayout({
   children,
-}: Props /* Readonly<{
+}: /* Props */ Readonly<{
   children: React.ReactNode;
-}> */) {
+}>) {
   return (
     <html lang="en">
       <head>
