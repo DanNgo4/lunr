@@ -137,7 +137,7 @@ const Dashboard = () => {
               </div>
 
               <div className="flex-1 flex justify-center items-center relative">
-                <Search className="absolute left-[21.5%] ml-3 z-[1] text-gray-500" />
+                <Search className="absolute left-[20.5%] 3xl:left-[21.5%] ml-3 z-[1] text-gray-500" />
 
                 <Input 
                   placeholder="Type a file name, tag or keyword"
