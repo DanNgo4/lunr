@@ -100,4 +100,33 @@ body {
       shadow-sm
       p-2
   }
+
+  .truncated-text {
+    @apply
+      truncate 
+      w-[100%] 
+      my-2
+      hover:bg-gray-300
+      cursor-pointer
+  }
+
+  .dashboard-item {
+    @apply
+      flex 
+      flex-row 
+      items-center 
+      px-3 
+      py-1 
+      rounded-md 
+      cursor-pointer 
+      hover:bg-gray-300
+  }
+
+  .dashboard-btn {
+    @apply
+      rounded-full
+      cursor-pointer
+      px-24
+      w-[95%]
+  }
 }

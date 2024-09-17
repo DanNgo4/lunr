@@ -45,51 +45,51 @@ const Dashboard = () => {
               <li 
                 id="repo"
                 onClick={() => handleClick("repo")}
-                className={`flex flex-row items-center px-3 py-1 rounded-md cursor-pointer ${activeId === "repo" ? "bg-gray-300" : ""}`}
+                className={`dashboard-item ${activeId === "repo" ? "bg-gray-300" : ""}`}
               >
                 <BookText />
                 <p className="ml-3">Repository</p>
               </li>
 
-              <li className="cursor-pointer">
+              <li>
                 <div 
                   id="projects" 
                   onClick={() => handleClick("projects")} 
-                  className={`flex flex-row items-center px-3 py-1 rounded-md ${activeId === "projects" ? "bg-gray-300" : ""}`}
+                  className={`dashboard-item ${activeId === "projects" ? "bg-gray-300" : ""}`}
                 >
                   <FolderClosed />
                   <p className="ml-3">Projects</p>
                 </div>
                 
                 <ul className="ml-10">
-                  <li><p className="truncate w-[100%] my-2">VH-0001 - Vehicle Usdkbuf</p></li>
-                  <li><p className="truncate w-[100%] my-2">VMR041 - Boat Ramasdfbn</p></li>
-                  <li><p className="truncate w-[100%] my-2">LNR-001 - Lunr Samalisdebf</p></li>
-                  <li><p className="truncate w-[100%] my-2">DF-000952 - Boat Ralisdbfh</p></li>
-                  <li><p className="truncate w-[100%] my-2">001 - PF - Sample Prasdfbasd</p></li>
+                  <li><p className="truncated-text">VH-0001 - Vehicle Usdkbuf</p></li>
+                  <li><p className="truncated-text">VMR041 - Boat Ramasdfbn</p></li>
+                  <li><p className="truncated-text">LNR-001 - Lunr Samalisdebf</p></li>
+                  <li><p className="truncated-text">DF-000952 - Boat Ralisdbfh</p></li>
+                  <li><p className="truncated-text">001 - PF - Sample Prasdfbasd</p></li>
                 </ul>
               </li>
 
-              <li className="cursor-pointer">
+              <li>
                 <div 
                   id="collections"
                   onClick={() => handleClick("collections")}
-                  className={`flex flex-row items-center px-3 py-1 rounded-md ${activeId === "collections" ? "bg-gray-300" : ""}`}
+                  className={`dashboard-item ${activeId === "collections" ? "bg-gray-300" : ""}`}
                 >
                   <Folders />
                   <p className="ml-3">Collections</p>
                 </div>
 
                 <ul className="ml-10">
-                  <li><p className="truncate w-[100%] my-2">Pikenba</p></li>
-                  <li><p className="truncate w-[100%] my-2">My Saved Search</p></li>
+                  <li><p className="truncated-text">Pikenba</p></li>
+                  <li><p className="truncated-text">My Saved Search</p></li>
                 </ul>
               </li>
 
               <li 
                 id="collaboration"
                 onClick={() => handleClick("collaboration")}
-                className={`flex flex-row items-center px-3 py-1 rounded-md cursor-pointer ${activeId === "collaboration" ? "bg-gray-300" : ""}`}
+                className={`dashboard-item ${activeId === "collaboration" ? "bg-gray-300" : ""}`}
               >
                 <Share2 />
                 <p className="ml-3">Collaboration</p>
@@ -98,7 +98,7 @@ const Dashboard = () => {
               <li 
                 id="portfolios"
                 onClick={() => handleClick("portfolios")}
-                className={`flex flex-row items-center px-3 py-1 rounded-md cursor-pointer ${activeId === "portfolios" ? "bg-gray-300" : ""}`}
+                className={`dashboard-item ${activeId === "portfolios" ? "bg-gray-300" : ""}`}
               >
                 <Building />
                 <p className="ml-3">Portfolios</p>
@@ -107,7 +107,7 @@ const Dashboard = () => {
               <li 
                 id="reports"
                 onClick={() => handleClick("reports")}
-                className={`flex flex-row items-center px-3 py-1 rounded-md cursor-pointer ${activeId === "reports" ? "bg-gray-300" : ""}`}
+                className={`dashboard-item ${activeId === "reports" ? "bg-gray-300" : ""}`}
               >
                 <ChartColumnIncreasing />
                 <p className="ml-3">Reports</p>
@@ -130,7 +130,7 @@ const Dashboard = () => {
             <div className="bg-white mx-auto w-full flex justify-between items-center relative px-4">
               <div 
                 onClick={() => {router.push("/")}}
-                className="flex items-center border rounded-full w-auto py-2 px-4 hover:bg-gray-50 hover:cursor-pointer"
+                className="flex items-center border rounded-full w-auto py-2 px-4 hover:bg-gray-50 cursor-pointer"
               >
                 <ChevronLeft className="h-5 w-5 mr-2" />
                 <p>Back</p>
@@ -179,20 +179,20 @@ const Dashboard = () => {
 
               <div className="grid grid-rows-[25%_75%] h-full border-t-2">
                 <div className="flex flex-col items-center mt-2">
-                  <button className="rounded-full text-white py-2 px-24 bg-purple-500 hover:cursor-pointer flex flex-row items-center justify-center gap-1 w-[95%]">
+                  <button className="dashboard-btn text-white py-2 bg-purple-500 flex flex-row items-center justify-center gap-1">
                     <p>Create</p>
                     <ChevronDown />
                   </button>
 
-                  <button className="rounded-full text-[var(--primary-purple)] py-3 px-24 bg-blue-100 hover:cursor-pointer my-2 w-[95%]">Upload</button>
+                  <button className="dashboard-btn text-[var(--primary-purple)] py-3 bg-blue-100 my-2">Upload</button>
 
-                  <span className="flex flex-row items-center gap-2 text-purple-500 mt-4 self-start ml-4">
+                  <span className="flex flex-row items-center gap-2 text-purple-500 mt-4 self-start ml-4 cursor-pointer">
                     <FolderPlus />
                     <p>Create folder</p>
                   </span>
                 </div>
 
-                <div className="border-t-2 mx-2 flex justify-center">
+                <div className="border-t-2 mx-2 flex justify-center cursor-pointer">
                   <CircleEllipsis className="mt-2 text-gray-500"/>
                 </div>
               </div>

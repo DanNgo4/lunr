@@ -38,7 +38,7 @@ export default function Home() {
         </p>
         <hr />
 
-        <section className="flex items-center justify-center gap-3 w-full my-6 p-2 bg-[var(--background)] border-2 rounded-full hover:bg-gray-50 hover:cursor-pointer">
+        <section className="flex items-center justify-center gap-3 w-full my-6 p-2 bg-[var(--background)] border-2 rounded-full hover:bg-gray-50 cursor-pointer">
           <Image
             src={MicrosoftLogo}
             width={25}
@@ -82,7 +82,7 @@ export default function Home() {
         <br/>
 
         <section className="flex items-center justify-between gap-8 my-6">
-          <div className="flex items-center border rounded-full py-2 px-4 hover:bg-gray-50 hover:cursor-pointer">
+          <div className="flex items-center border rounded-full py-2 px-4 hover:bg-gray-50 cursor-pointer">
             <ChevronLeft className="h-5 w-5 mr-2" />
             <p>Select team</p>
           </div>
@@ -97,7 +97,7 @@ export default function Home() {
             }}
             className={`rounded-full text-white py-2 px-24 
             ${!name || !pwd ? "bg-purple-300 cursor-not-allowed"
-                            : "hover:bg-purple-500 hover:cursor-pointer bg-purple-600"}`}
+                            : "hover:bg-purple-500 cursor-pointer bg-purple-600"}`}
           />
         </section>
 
