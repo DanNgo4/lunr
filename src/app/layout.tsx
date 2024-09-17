@@ -29,7 +29,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen flex-col items-stretch antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} flex min-h-screen max-w-[100vw] flex-col items-stretch antialiased`}
       >
         {children}
       </body>
