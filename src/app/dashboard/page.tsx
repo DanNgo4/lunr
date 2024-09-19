@@ -9,43 +9,16 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
-import { BookText, FolderClosed, Folders, Share2, Building, ChartColumnIncreasing, 
-         Settings, ChevronLeft, Search, SlidersVertical, CircleEllipsis, FolderPlus, 
-         ChevronDown, FileSearch2, Map } from "lucide-react";
+import { Settings, ChevronLeft, Search, SlidersVertical, CircleEllipsis, 
+         FolderPlus, ChevronDown, Upload, FileSearch2, Map } from "lucide-react";
 
 import RoundedBtn from "@/components/roundedBtn";
+
+import DashboardItems from "../assets/DashboardItems";
 
 const Dashboard = () => {
   const router =  useRouter();
   const [activeId, setActiveId] = useState("");
-
-  const items = [
-    { id: "repo", label: "Repository", icon: <BookText />, subItems: [] },
-    { 
-      id: "projects", 
-      label: "Projects", 
-      icon: <FolderClosed />, 
-      subItems: [
-        "VH-0001 - Vehicle Usdkbuf",
-        "VMR041 - Boat Ramasdfbn",
-        "LNR-001 - Lunr Samalisdebf",
-        "DF-000952 - Boat Ralisdbfh",
-        "001 - PF - Sample Prasdfbasd"
-      ]
-    },
-    { 
-      id: "collections", 
-      label: "Collections", 
-      icon: <Folders />, 
-      subItems: [
-        "Pikenba",
-        "My Saved Search"
-      ]
-    },
-    { id: "collaboration", label: "Collaboration", icon: <Share2 />, subItems: [] },
-    { id: "portfolios", label: "Portfolios", icon: <Building />, subItems: [] },
-    { id: "reports", label: "Reports", icon: <ChartColumnIncreasing />, subItems: [] }
-  ];
 
   const notiNum = 9;
 
@@ -72,7 +45,7 @@ const Dashboard = () => {
             </svg>
 
             <ul className="mx-1">
-              {items.map((item) => (
+              {DashboardItems.map((item) => (
                 <li key={item.id}>
                   <div 
                     id={item.id} 
@@ -168,7 +141,8 @@ const Dashboard = () => {
 
                   <RoundedBtn
                     first={<p>Upload</p>}
-                    className="dashboard-btn text-[var(--primary-purple)] py-3 bg-blue-100 my-2"
+                    second={<Upload />}
+                    className="dashboard-btn text-[var(--primary-purple)] py-3 bg-blue-100 my-2 justify-center gap-1"
                   />
 
                   <span className="flex flex-row items-center gap-2 text-purple-500 mt-4 self-start ml-4 cursor-pointer">
