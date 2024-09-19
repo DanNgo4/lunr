@@ -8,9 +8,11 @@ import { useState } from "react";
 
 import { ChevronLeft } from "lucide-react";
 
+import RoundedBtn from "@/components/roundedBtn";
+
 import MicrosoftLogo from "./images/microsoft.png";
 
-export default function Home() {
+export default function Home({ teamName="luminosity"}) {
   const router =  useRouter();
   const [name, setName] = useState("");
   const [pwd, setPwd] = useState("");
@@ -34,7 +36,7 @@ export default function Home() {
 
       <form className="bg-white p-10 border rounded-lg shadow-sm min-w-96">
         <p className="text-left">Log in to Team 
-          <span className="text-purple-600"> {"(luminosity)"}</span>
+          <span className="text-purple-600"> {teamName}</span>
         </p>
         <hr />
 
@@ -82,10 +84,11 @@ export default function Home() {
         <br/>
 
         <section className="flex items-center justify-between gap-8 my-6">
-          <div className="flex items-center border rounded-full py-2 px-4 hover:bg-gray-50 cursor-pointer">
-            <ChevronLeft className="h-5 w-5 mr-2" />
-            <p>Select team</p>
-          </div>
+          <RoundedBtn 
+            first={<ChevronLeft className="h-5 w-5 mr-2" />}
+            second={<p>Select team</p>}
+            className="py-2 px-4 hover:bg-gray-50"
+          />
 
           <input
             type="submit" 

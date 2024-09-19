@@ -13,9 +13,41 @@ import { BookText, FolderClosed, Folders, Share2, Building, ChartColumnIncreasin
          Settings, ChevronLeft, Search, SlidersVertical, CircleEllipsis, FolderPlus, 
          ChevronDown, FileSearch2, Map } from "lucide-react";
 
+import RoundedBtn from "@/components/roundedBtn";
+
 const Dashboard = () => {
   const router =  useRouter();
   const [activeId, setActiveId] = useState("");
+
+  const items = [
+    { id: "repo", label: "Repository", icon: <BookText />, subItems: [] },
+    { 
+      id: "projects", 
+      label: "Projects", 
+      icon: <FolderClosed />, 
+      subItems: [
+        "VH-0001 - Vehicle Usdkbuf",
+        "VMR041 - Boat Ramasdfbn",
+        "LNR-001 - Lunr Samalisdebf",
+        "DF-000952 - Boat Ralisdbfh",
+        "001 - PF - Sample Prasdfbasd"
+      ]
+    },
+    { 
+      id: "collections", 
+      label: "Collections", 
+      icon: <Folders />, 
+      subItems: [
+        "Pikenba",
+        "My Saved Search"
+      ]
+    },
+    { id: "collaboration", label: "Collaboration", icon: <Share2 />, subItems: [] },
+    { id: "portfolios", label: "Portfolios", icon: <Building />, subItems: [] },
+    { id: "reports", label: "Reports", icon: <ChartColumnIncreasing />, subItems: [] }
+  ];
+
+  const notiNum = 9;
 
   useEffect(() => {
     handleClick("repo");
@@ -24,8 +56,6 @@ const Dashboard = () => {
   const handleClick = (id: string) => {
     setActiveId(id);
   };
-
-  const notiNum = 9;
 
   return (
     <>
@@ -42,76 +72,28 @@ const Dashboard = () => {
             </svg>
 
             <ul className="mx-1">
-              <li 
-                id="repo"
-                onClick={() => handleClick("repo")}
-                className={`dashboard-item ${activeId === "repo" ? "bg-gray-300" : ""}`}
-              >
-                <BookText />
-                <p className="ml-3">Repository</p>
-              </li>
+              {items.map((item) => (
+                <li key={item.id}>
+                  <div 
+                    id={item.id} 
+                    onClick={() => handleClick(item.id)} 
+                    className={`dashboard-item ${activeId === item.id ? "bg-gray-300" : ""}`}
+                  >
+                    {item.icon}
+                    <p className="ml-3">{item.label}</p>
+                  </div>
 
-              <li>
-                <div 
-                  id="projects" 
-                  onClick={() => handleClick("projects")} 
-                  className={`dashboard-item ${activeId === "projects" ? "bg-gray-300" : ""}`}
-                >
-                  <FolderClosed />
-                  <p className="ml-3">Projects</p>
-                </div>
-                
-                <ul className="ml-10">
-                  <li><p className="truncated-text">VH-0001 - Vehicle Usdkbuf</p></li>
-                  <li><p className="truncated-text">VMR041 - Boat Ramasdfbn</p></li>
-                  <li><p className="truncated-text">LNR-001 - Lunr Samalisdebf</p></li>
-                  <li><p className="truncated-text">DF-000952 - Boat Ralisdbfh</p></li>
-                  <li><p className="truncated-text">001 - PF - Sample Prasdfbasd</p></li>
-                </ul>
-              </li>
-
-              <li>
-                <div 
-                  id="collections"
-                  onClick={() => handleClick("collections")}
-                  className={`dashboard-item ${activeId === "collections" ? "bg-gray-300" : ""}`}
-                >
-                  <Folders />
-                  <p className="ml-3">Collections</p>
-                </div>
-
-                <ul className="ml-10">
-                  <li><p className="truncated-text">Pikenba</p></li>
-                  <li><p className="truncated-text">My Saved Search</p></li>
-                </ul>
-              </li>
-
-              <li 
-                id="collaboration"
-                onClick={() => handleClick("collaboration")}
-                className={`dashboard-item ${activeId === "collaboration" ? "bg-gray-300" : ""}`}
-              >
-                <Share2 />
-                <p className="ml-3">Collaboration</p>
-              </li>
-
-              <li 
-                id="portfolios"
-                onClick={() => handleClick("portfolios")}
-                className={`dashboard-item ${activeId === "portfolios" ? "bg-gray-300" : ""}`}
-              >
-                <Building />
-                <p className="ml-3">Portfolios</p>
-              </li>
-
-              <li 
-                id="reports"
-                onClick={() => handleClick("reports")}
-                className={`dashboard-item ${activeId === "reports" ? "bg-gray-300" : ""}`}
-              >
-                <ChartColumnIncreasing />
-                <p className="ml-3">Reports</p>
-              </li>
+                  {item.subItems.length > 0 && (
+                    <ul className="ml-10">
+                      {item.subItems.map((subItem, index) => (
+                        <li key={index}>
+                          <p className="truncated-text">{subItem}</p>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
             </ul>
           </section>
 
@@ -128,13 +110,12 @@ const Dashboard = () => {
         <article className="bg-white">
           <section className="grid grid-rows-[8%_92%] h-full">
             <div className="bg-white mx-auto w-full flex justify-between items-center relative px-4">
-              <div 
-                onClick={() => {router.push("/")}}
-                className="flex items-center border rounded-full w-auto py-2 px-4 hover:bg-gray-50 cursor-pointer"
-              >
-                <ChevronLeft className="h-5 w-5 mr-2" />
-                <p>Back</p>
-              </div>
+              <RoundedBtn
+                first={<ChevronLeft className="h-5 w-5 mr-2" />} 
+                second={<p>Back</p>}
+                className="w-auto py-2 px-4 hover:bg-gray-50"
+                callback={() => {router.push("/")}}
+              />
 
               <div className="flex-1 flex justify-center items-center relative">
                 <Search className="absolute left-[20.5%] 3xl:left-[21.5%] ml-3 z-[1] text-gray-500" />
@@ -179,12 +160,16 @@ const Dashboard = () => {
 
               <div className="grid grid-rows-[25%_75%] h-full border-t-2">
                 <div className="flex flex-col items-center mt-2">
-                  <button className="dashboard-btn text-white py-2 bg-purple-500 flex flex-row items-center justify-center gap-1">
-                    <p>Create</p>
-                    <ChevronDown />
-                  </button>
+                  <RoundedBtn
+                    first={<p>Create</p>}
+                    second={<ChevronDown />}
+                    className="dashboard-btn text-white py-2 bg-purple-500 justify-center gap-1"
+                  />
 
-                  <button className="dashboard-btn text-[var(--primary-purple)] py-3 bg-blue-100 my-2">Upload</button>
+                  <RoundedBtn
+                    first={<p>Upload</p>}
+                    className="dashboard-btn text-[var(--primary-purple)] py-3 bg-blue-100 my-2"
+                  />
 
                   <span className="flex flex-row items-center gap-2 text-purple-500 mt-4 self-start ml-4 cursor-pointer">
                     <FolderPlus />
