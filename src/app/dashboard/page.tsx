@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 import { Settings, ChevronLeft, Search, SlidersVertical, CircleEllipsis, 
-         FolderPlus, ChevronDown, Upload, FileSearch2, Map } from "lucide-react";
+         FolderPlus, ChevronDown, FileSearch2, Map } from "lucide-react";
 
 import RoundedBtn from "@/components/roundedBtn";
 
@@ -141,7 +141,6 @@ const Dashboard = () => {
 
                   <RoundedBtn
                     first={<p>Upload</p>}
-                    second={<Upload />}
                     className="dashboard-btn text-[var(--primary-purple)] py-3 bg-blue-100 my-2 justify-center gap-1"
                   />
 
